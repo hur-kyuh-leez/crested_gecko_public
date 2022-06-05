@@ -1,4 +1,4 @@
-package com.CrestedGecko.crested_gecko
+package net.crested-gecko.crested_gecko
 
 import io.flutter.embedding.android.FlutterActivity
 

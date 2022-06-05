@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836033098136",
+    "project_id": "crested-gecko-22172",
+    "storage_bucket": "crested-gecko-22172.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836033098136:android:35cb5aa2c2f499fa6c3bed",
+        "android_client_info": {
+          "package_name": "net.crestedgecko.crestedgecko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836033098136-htr41l7a2nuc5uq4nb7kbatehvl8c5dp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeFhapTmR6mVEF2agsRlMSaWd0UN328l4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836033098136-htr41l7a2nuc5uq4nb7kbatehvl8c5dp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
