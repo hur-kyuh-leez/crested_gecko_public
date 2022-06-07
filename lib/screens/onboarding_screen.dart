@@ -142,9 +142,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30),
                         child: Text(
-                          '(아직 진행하고 있지 않아요! 혼자 계획중입니다!\n'
-                          '허락 아직 안받았어요!)\n'
-                          '  \n'
+
                           '참여 자격: \n'
                           '1. 크레와 사랑에 빠지신 분들\n'
                           '2. 파사모 회원 이면서 1개월 이상 활동중 이신 분들!\n'
