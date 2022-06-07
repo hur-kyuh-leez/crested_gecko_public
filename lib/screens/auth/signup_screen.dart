@@ -10,7 +10,6 @@ class SignupScreen extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _phoneNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +102,6 @@ class SignupScreen extends StatelessWidget {
                       _usernameController.text,
                       _emailController.text,
                       _passwordController.text,
-                      _phoneNumberController.text,
 
                     ),
                     child: const Center(

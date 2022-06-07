@@ -31,8 +31,8 @@ Widget buildListView() => Padding(
       return Padding(
         padding: const EdgeInsets.only(bottom: 20.0),
         child: ExpansionTile(
-            textColor:Colors.amber,
-            iconColor:Colors.amber,
+            textColor:Colors.red[400],
+            iconColor:Colors.red[400],
           title: Text(faq_data[index]['question'].toString()),
           children:[
             Padding(

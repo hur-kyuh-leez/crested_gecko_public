@@ -4,20 +4,17 @@ class User {
   String username;
   String email;
   String uid;
-  String phone_number;
 
   User({
     required this.username,
     required this.email,
-    required this.uid,
-    required this.phone_number,
+    required this.uid
   });
 
   Map<String, dynamic> toJson() => {
         "username": username,
         "email": email,
         "uid": uid,
-        "phone_number": phone_number,
       };
 
   static User fromSnap(DocumentSnapshot snap) {
@@ -26,7 +23,6 @@ class User {
       email: snapshot['email'],
       uid: snapshot['uid'],
       username: snapshot['username'],
-      phone_number: snapshot['phone_number'],
     );
   }
 }

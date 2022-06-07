@@ -37,7 +37,7 @@ class AuthController extends GetxController {
   }
 
   // registering the user
-  void registerUser(String username, String email, String password, String phone_number) async {
+  void registerUser(String username, String email, String password) async {
     try {
       if (username.isNotEmpty && email.isNotEmpty && password.isNotEmpty) {
         if (email.contains('@naver.com')){
@@ -50,7 +50,6 @@ class AuthController extends GetxController {
             username: username,
             email: email,
             uid: cred.user!.uid, // user.uid를 활용해서  파일 uid로 씀
-            phone_number: phone_number,
 
           );
           await firestore
@@ -77,12 +76,21 @@ class AuthController extends GetxController {
           '비밀번호가 너무 짧아요',
           '6자리 이상으로 해주세요',
         );
-    } else {
+    } else if (e.code == 'email-already-in-use'){
         Get.snackbar(
-          '문제가 있네요',
-          e.message.toString(),
+          '이미 가입된 이메일',
+          '가입을 하셨네요 비밀번호 찾기를 이용 해주세요',
         );
       }
+      else {
+        Get.snackbar(
+          '문제가 있네요',
+          // e.message.toString(),
+          e.code.toString(),
+
+        );
+      }
+
     }
   }
 
