@@ -1,16 +1,5 @@
-# crested_gecko
+# Crested Gecko on Web/Android/iOS using Flutter
+### Introducing the beta version of Crestedgecko.net, a user-centric community where reptile enthusiasts can freely share and exchange information about their beloved creatures.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Preview
+![GIF](source/crested-gecko.gif)

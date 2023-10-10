@@ -1,5 +1,6 @@
 import 'package:crested_gecko/constants.dart';
 import 'package:crested_gecko/controllers/auth_controller.dart';
+import 'package:crested_gecko/screens/auth/login_screen.dart';
 import 'package:crested_gecko/screens/home_screen.dart';
 import 'package:crested_gecko/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
-      // home: HomeScreen(),
-      home: OnBoardingScreen(),
+      home: LoginScreen(),
+      // home: OnBoardingScreen(),
     );
   }
 }

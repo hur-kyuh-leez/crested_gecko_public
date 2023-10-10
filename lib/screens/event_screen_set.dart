@@ -59,8 +59,8 @@ Widget buildImageInteractionCard() => InkWell(
 
                   // left: 16,
                   child: Text(
-                        '5만 레플 테스트\n'
-                        '\n',
+                        '암추 + 숫추 + 미구분\n'
+                        '3마리 세트\n',
                     textAlign: TextAlign.right,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -75,7 +75,7 @@ Widget buildImageInteractionCard() => InkWell(
             const Padding(
               padding: const EdgeInsets.all(16),
               child: Text(
-                '베타 테스트',
+                '50% 보다 높은 확률로\n암컷을 가질수 있는 기회!',
                 style: TextStyle(fontSize: 16),
               ),
             )

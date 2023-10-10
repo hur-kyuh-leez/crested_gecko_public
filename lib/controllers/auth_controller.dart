@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:crested_gecko/constants.dart';
+import 'package:crested_gecko/screens/auth/login_screen.dart';
 import 'package:crested_gecko/screens/auth/verify_email_screen.dart';
 import 'package:crested_gecko/screens/home_screen.dart';
 import 'package:crested_gecko/models/user.dart' as model;
@@ -28,11 +29,9 @@ class AuthController extends GetxController {
 
   _setInitialScreen(User? user) {
     if (user == null) {
-      Get.offAll(() => OnBoardingScreen());
+      Get.offAll(() => LoginScreen());
     } else {
-      // Get.offAll(() => const HomeScreen()
-          Get.offAll(() => VerifyEmailScreen()
-      );
+      Get.offAll(() => VerifyEmailScreen());
     }
   }
 
@@ -40,9 +39,10 @@ class AuthController extends GetxController {
   void registerUser(String username, String email, String password) async {
     try {
       if (username.isNotEmpty && email.isNotEmpty && password.isNotEmpty) {
-        if (email.contains('@naver.com')){
+        if (email.contains('@naver.com')) {
           // save out user to our ath and firebase firestore
-          UserCredential cred = await firebaseAuth.createUserWithEmailAndPassword(
+          UserCredential cred =
+              await firebaseAuth.createUserWithEmailAndPassword(
             email: email,
             password: password,
           );
@@ -50,7 +50,6 @@ class AuthController extends GetxController {
             username: username,
             email: email,
             uid: cred.user!.uid, // user.uid를 활용해서  파일 uid로 씀
-
           );
           await firestore
               .collection('users')
@@ -62,35 +61,30 @@ class AuthController extends GetxController {
             '파사모에 가입한 이메일로 가입 해주시길 바랍니다',
           );
         }
-
-      }
-      else {
+      } else {
         Get.snackbar(
           '문제가 있네요',
           '모든 정보를 기입하지 않으셨습니다',
         );
       }
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password'){
+      if (e.code == 'weak-password') {
         Get.snackbar(
           '비밀번호가 너무 짧아요',
           '6자리 이상으로 해주세요',
         );
-    } else if (e.code == 'email-already-in-use'){
+      } else if (e.code == 'email-already-in-use') {
         Get.snackbar(
           '이미 가입된 이메일',
           '가입을 하셨네요 비밀번호 찾기를 이용 해주세요',
         );
-      }
-      else {
+      } else {
         Get.snackbar(
           '문제가 있네요',
           // e.message.toString(),
           e.code.toString(),
-
         );
       }
-
     }
   }
 
@@ -106,25 +100,22 @@ class AuthController extends GetxController {
         );
       }
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'invalid-email'){
+      if (e.code == 'invalid-email') {
         Get.snackbar(
           '이메일 문제',
           '이메일 형식이 틀립니다',
         );
-      }
-      else if(e.code == 'user-not-found' || e.code == 'wrong-password') {
+      } else if (e.code == 'user-not-found' || e.code == 'wrong-password') {
         Get.snackbar(
           '미가입 또는 비밀번호 문제',
           '회원가입 하셨나요?\n회원이시라면 비밀번호 다시 한번 확인 부탁드립니다',
         );
-      }
-      else if(e.code == 'too-many-requests') {
+      } else if (e.code == 'too-many-requests') {
         Get.snackbar(
           '로그인 시도 초과',
           '다음에 다시 시도 하시길 바랍니다',
         );
-      }
-      else {
+      } else {
         Get.snackbar(
           '문제가 있네요',
           e.code.toString(),

@@ -41,9 +41,11 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
   Future checkEmailVerified() async {
     // call after email verification!
     await firebaseAuth.currentUser!.reload();
-    setState(() {
-      isEmailVerified = firebaseAuth.currentUser!.emailVerified;
-    });
+    if (this.mounted) {
+      setState(() {
+        isEmailVerified = firebaseAuth.currentUser!.emailVerified;
+      });
+    }
     if (isEmailVerified) timer?.cancel();
   }
 

@@ -226,8 +226,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   // next or done
                   onLastPage
                       ? GestureDetector(
-                          // onTap: () => {Get.to(() => HomeScreen())},
-                          onTap: () => {Get.to(() => LoginScreen())},
+                          // onTap: () => {Get.to(() => LoginScreen())},
+                    onTap: () => {Get.offAll(() => LoginScreen())},
 
                           child: const Text(
                             '모두 동의',
